@@ -1,0 +1,167 @@
+:root {
+    --clr-orange: hsl(31, 77%, 52%);
+    --clr-cyan: hsl(184, 100%, 22%);
+    --clr-green: hsl(179, 100%, 13%);
+    --clr-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --clr-primary: hsl(0, 0%, 95%);
+
+    --ff-primary: 'Lexend Deca', sans-serif;
+    --ff-titles: 'Big Shoulders Display', cursive;
+
+    --fw-primary: 400;
+    --fw-bold: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    background-color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    color: var(--clr-paragraphs);
+    display: grid;
+    place-content: center;
+    padding: 6rem 1.6rem;
+}
+
+.cards {
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 34rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.9rem 3.2rem;
+}
+
+.card-icon {
+    width: 64px;
+    height: 40px;
+}
+
+.card-title {
+    font-family: var(--ff-titles);
+    font-weight: var(--fw-bold);
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+}
+
+.card-description {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.btn-learn-more {
+    padding: .8rem 0rem;
+    max-width: 10rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+} 
+
+.btn-learn-more:hover {
+    background-color: transparent;
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-primary);
+} 
+
+.card-sedans {
+    background-color: var(--clr-orange);
+}
+
+.card-suvs {
+    background-color: var(--clr-cyan);
+}
+
+.btn-sedans {
+    color: var(--clr-orange);
+}
+
+.btn-suvs {
+    color: var(--clr-cyan);
+}
+
+.card-luxury {
+    background-color: var(--clr-green);
+}
+
+.btn-luxury {
+    color: var(--clr-green);
+}
+
+@media(min-width: 769px) {
+
+    /*
+    3. Allow percentage-based heights in the application
+    */
+    html, body {
+        height: 100%;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: none;
+    }
+
+    .card {
+        height: 80rem;
+        max-height: 32rem;
+        max-width: 20rem;
+        justify-content: center;
+    }
+
+    .btn-learn-more {
+        margin-top: auto;
+    }
+
+}
